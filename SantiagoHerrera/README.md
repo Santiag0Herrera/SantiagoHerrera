@@ -1,8 +1,25 @@
-# React + Vite
+# Portafolio Frontend
+¡Bienvenido a mi Portafolio Frontend! Este repositorio alberga el código fuente de mi portafolio, diseñado con tecnologías modernas para exhibir proyectos, habilidades y experiencia.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre Mi
+¡Hola! Soy Santiago Herrera, un desarrollador frontend apasionado por la creación de experiencias digitales cautivadoras y funcionales. Este portafolio está construido con las últimas tecnologías para demostrar mis habilidades y proyectos destacados.
 
-Currently, two official plugins are available:
+## Tecnologías Principales
+- **React:** v18.2.0
+- **Vite:** v4.4.5
+- **Ant Design:** v5.12.1
+- **Framer Motion:** v10.16.14
+- **Firebase:** v10.7.1
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Desarrollo
+Inicia el servidor de desarrollo con Vite.
+```bash
+npm run dev
+```
+
+## Construcción
+Compila la aplicación para producción.
+```bash
+npm run build
+```
