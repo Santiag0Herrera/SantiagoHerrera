@@ -8,7 +8,7 @@ import {
     BgColorsOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, FloatButton } from 'antd';
-import { useGlobalContext } from '../Context/context';
+import { useGlobalContext } from '../../Context/context';
 import { useNavigate } from 'react-router-dom'
 
 const { Sider } = Layout;
@@ -40,7 +40,7 @@ const SideBar = () => {
     }, [])
 
     useEffect(()=>{
-        window.screen.width > 600 ? setCollapse(false) : setCollapse(true)
+        window.screen.width > 1000 ? setCollapse(false) : setCollapse(true)
     }, [window.screen.width])
 
     const menuItemStyle = (key) => {
@@ -106,7 +106,7 @@ const SideBar = () => {
     ]
 
     return (
-        <Sider trigger={null} collapsible collapsed={collapse} style={{ backgroundColor: 'transparent' }}>
+        <Sider trigger={null} collapsible collapsed={collapse} style={{ backgroundColor: 'transparent'   }}>
             <Menu
                 defaultSelectedKeys={[menuItems.find(item => item.path === window.location.pathname).key]}
                 theme={state.theme}

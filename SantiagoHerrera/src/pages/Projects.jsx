@@ -31,13 +31,13 @@ const Projects = () => {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
           <h1>My Projects</h1>
-          <Space className='projectsContainer'>
+          <div className='projectsContainer'>
             {loading ? 
               Array.from({ length: 6 }).map((item, index) => <ProjectCard key={index} loading={loading}/>)
             :
               projects.map((p, index) => <ProjectCard key={index} data={p} loading={loading}/>
             )}
-          </Space>
+          </div>
         </motion.div>
       )}
     </Space>

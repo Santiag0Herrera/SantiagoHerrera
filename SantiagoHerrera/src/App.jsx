@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { appRoutes } from './routes';
 import { Layout, ConfigProvider, theme } from 'antd';
 import './App.css';
-import SideBar from './components/SideBar';
+import SideBar from './components/SideBar/SideBar';
 import { useGlobalContext } from './Context/context';
 import { motion, useScroll, useSpring } from "framer-motion"
 
