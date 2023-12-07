@@ -23,9 +23,36 @@ p{
   font-size: 13px;
 }
 
+h4{
+  font-family: 'Source Code Pro', monospace;
+  font-weight: bold;
+}
+
 .page{
   display: flex;
   flex-direction: column;
-  padding: 60px;
+  padding: 5%;
   transition: all 0.5s ease-in-out;
+  align-items: flex-start
+}
+
+.projectsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ant-card-body{
+  display: flex;
+  flex-direction: row;
+}
+
+.ant-card-body .cardContent{
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+main{
+  width: 80%;
 }

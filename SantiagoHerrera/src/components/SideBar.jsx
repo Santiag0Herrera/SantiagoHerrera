@@ -40,7 +40,6 @@ const SideBar = () => {
     }, [])
 
     useEffect(()=>{
-        console.log(window.screen.width)
         window.screen.width > 600 ? setCollapse(false) : setCollapse(true)
     }, [window.screen.width])
 
