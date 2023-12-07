@@ -13,7 +13,7 @@ const ProjectCard = ({ data, loading }) => {
         border: `3px solid ${state.theme === 'light' ? '#1e2125' : '#e9dfce'}`,
         background: state.theme === 'light' ? '#1e2125' : '#e9dfce', 
         color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
-        width: '50vw',
+        width: '100%',
         margin: '0 auto',
     }
 
@@ -39,7 +39,6 @@ const ProjectCard = ({ data, loading }) => {
                     >
                         <Skeleton loading={loading} avatar active >
                             <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2" shape='square' size={100} />
-                            
                             <div className='cardContent'>
                                 <h4>{data?.name}</h4>
                                 <Link to={`https://${data?.latestDeployments[0]?.alias[0]}`}>{data?.latestDeployments[0]?.alias[0]}</Link>
