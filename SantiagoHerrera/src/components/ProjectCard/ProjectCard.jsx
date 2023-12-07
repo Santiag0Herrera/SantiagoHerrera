@@ -13,7 +13,7 @@ const ProjectCard = ({ data, loading }) => {
         border: `3px solid ${state.theme === 'light' ? '#1e2125' : '#e9dfce'}`,
         background: state.theme === 'light' ? '#1e2125' : '#e9dfce', 
         color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
-        width: '100%',
+        minWidth: '100%',
         margin: '0 auto',
     }
 
