@@ -13,11 +13,6 @@ export const appRoutes = [
     },
     {
         id: 0,
-        path: "/about",
-        component: <AboutMe />
-    },
-    {
-        id: 0,
         path: "/experience",
         component: <Experience />
     },

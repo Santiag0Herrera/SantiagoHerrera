@@ -22,25 +22,24 @@ const Projects = () => {
   }, []);
 
   return (
-    <Space className='page'>
+    <div className='page'>
       {isMounted && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          transition={{ ease: 'easeInOut' }}
+          style={{width: '100%'}}
         >
           <h1>My Projects</h1>
           <div className='projectsContainer'>
-            {loading ? 
-              Array.from({ length: 6 }).map((item, index) => <ProjectCard key={index} loading={loading}/>)
-            :
-              projects.map((p, index) => <ProjectCard key={index} data={p} loading={loading}/>
+            {!loading &&
+              projects.map((p, index) => <ProjectCard key={index} data={p} loading={loading} delay={index * 0.1}/>
             )}
           </div>
         </motion.div>
       )}
-    </Space>
+    </div>
   )
 }
 

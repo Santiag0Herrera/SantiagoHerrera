@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import { appRoutes } from './routes';
 import { Layout, ConfigProvider, theme } from 'antd';
-import './App.css';
 import SideBar from './components/SideBar/SideBar';
 import { useGlobalContext } from './Context/context';
 import { motion, useScroll, useSpring } from "framer-motion"
@@ -40,7 +39,7 @@ function App() {
         <SideBar />
         <Content
           style={{
-            minHeight: '150vh',
+            minHeight: '100vh',
             padding: '1rem',
             width: '85vw',
             position: 'absolute',
@@ -59,8 +58,8 @@ function App() {
               transformOrigin: '0%',
               width: '100%',
               height: '0.5rem',
-              backgroundColor: state.theme === 'light' ? '#1e2125' : '#e9dfce',
-              zIndex: 9999,
+              backgroundColor: 'grey',
+              zIndex: 1000,
               display: 'flex',
               flexDirection: 'row',
             }}

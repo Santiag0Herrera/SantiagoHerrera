@@ -50,6 +50,8 @@ const SideBar = () => {
             flexDirection: 'row',
             alignItems: 'center',
             color: state.activeTab === key ? (state.theme === 'light' ? '#1e2125' : '#e9dfce') : (state.theme === 'light' ? '#e9dfce' : '#1e2125'),
+            fontWeight: state.activeTab === key && 700,
+            fontSize: state.activeTab === key && '16px'
         }
     }
     const menuStyle = {
@@ -61,6 +63,7 @@ const SideBar = () => {
         paddingTop: '3%',
         position: 'fixed',
         width: '15%',
+        zIndex: 999,
     }
     const menuItems = [
         {
@@ -70,14 +73,6 @@ const SideBar = () => {
             style: menuItemStyle('0'),
             path: '/',
             onClick: () => navigate('/')
-        },
-        {
-            key: '1',
-            icon: <UserOutlined />,
-            label: 'About Me',
-            style: menuItemStyle('1'),
-            path: '/about',
-            onClick: () => navigate('/about')
         },
         {
             key: '2',
@@ -106,7 +101,7 @@ const SideBar = () => {
     ]
 
     return (
-        <Sider trigger={null} collapsible collapsed={collapse} style={{ backgroundColor: 'transparent'   }}>
+        <Sider trigger={null} collapsible collapsed={collapse} style={{ backgroundColor: state.theme === 'light' ? '#1e2125' : '#e9dfce'   }}>
             <Menu
                 defaultSelectedKeys={[menuItems.find(item => item.path === window.location.pathname).key]}
                 theme={state.theme}
@@ -119,7 +114,7 @@ const SideBar = () => {
                 icon={<BgColorsOutlined style={{ color: state.theme === 'light' ? '#e9dfce' : '#1e2125' }} />}
                 onClick={() => dispatch({ type: 'THEME' })}
                 type='primary'
-                style={{ height: '50px', width: '50px' }}
+                style={{ height: '50px', width: '50px', boxShadow: `#74727294 0px 0px 18px 2px`}}
             />
         </Sider>
     )

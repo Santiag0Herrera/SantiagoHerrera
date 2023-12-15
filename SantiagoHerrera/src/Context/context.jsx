@@ -1,5 +1,4 @@
 import React, { useContext, createContext, useEffect, useReducer } from 'react';
-import useFetchDoc from '../hooks/useFirebase';
 import Reducer from '../reducer/Reducer';
 
 export const GlobalContext = createContext();

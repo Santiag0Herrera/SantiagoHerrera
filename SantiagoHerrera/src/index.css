@@ -16,6 +16,7 @@ body::-webkit-scrollbar {
 h1{
   font-family: 'Lato', sans-serif;
   font-size: 50px;
+  color: '#2a324b';
 }
 
 p{
@@ -38,13 +39,11 @@ h4{
 
 .projectsContainer{
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.ant-card-body{
-  display: flex;
   flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .ant-card-body .cardContent{
@@ -55,4 +54,48 @@ h4{
 
 main{
   width: 80%;
+}
+
+.card{
+  margin: 0 auto;
+  height: auto;
+}
+
+.ant-card-body{
+  display: flex;
+  flex-direction: column !important;
+}
+
+.card-img{
+  width: 90%;
+  height: 10rem;
+}
+
+@media screen and (max-width: 630px) {
+  .page{
+    padding: 0;
+  }
+
+  .card{
+    width: 219px;
+  }
+
+  .projectsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Media query para pantallas medianas/grandes */
+@media screen and (max-width: 768px) {
+  .page{
+    padding: 0;
+  }
+
+  .card{
+    width: 219px;
+  }
 }
