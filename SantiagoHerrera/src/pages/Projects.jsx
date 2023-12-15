@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
-import { Space } from 'antd';
 import axios from 'axios'
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 

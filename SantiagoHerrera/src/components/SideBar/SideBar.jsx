@@ -36,6 +36,8 @@ const SideBar = () => {
             case '/contact':
                 dispatch({ type: 'CHANGE_TAB', payload: '4' })
                 break;
+            default:
+                dispatch({type: 'CHANGE_TAB', payload: '-1'})
         }
     }, [])
 
@@ -44,16 +46,26 @@ const SideBar = () => {
     }, [window.screen.width])
 
     const menuItemStyle = (key) => {
+        if(key != undefined){
+            return {
+                height: '70px',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                color: state.activeTab === key ? (state.theme === 'light' ? '#1e2125' : '#e9dfce') : (state.theme === 'light' ? '#e9dfce' : '#1e2125'),
+                fontWeight: state.activeTab === key && 700,
+                fontSize: state.activeTab === key && '16px'
+            }
+        }
         return {
             height: '70px',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            color: state.activeTab === key ? (state.theme === 'light' ? '#1e2125' : '#e9dfce') : (state.theme === 'light' ? '#e9dfce' : '#1e2125'),
-            fontWeight: state.activeTab === key && 700,
-            fontSize: state.activeTab === key && '16px'
+            color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
         }
     }
+
     const menuStyle = {
         height: '100vh',
         display: 'flex',
@@ -65,6 +77,7 @@ const SideBar = () => {
         width: '15%',
         zIndex: 999,
     }
+
     const menuItems = [
         {
             key: '0',
@@ -103,12 +116,12 @@ const SideBar = () => {
     return (
         <Sider trigger={null} collapsible collapsed={collapse} style={{ backgroundColor: state.theme === 'light' ? '#1e2125' : '#e9dfce'   }}>
             <Menu
-                defaultSelectedKeys={[menuItems.find(item => item.path === window.location.pathname).key]}
+                defaultSelectedKeys={[menuItems.find(item => item.path === window.location.pathname)?.key]}
                 theme={state.theme}
                 mode="inline"
                 style={menuStyle}
                 items={menuItems}
-                onSelect={item => dispatch({ type: 'CHANGE_TAB', payload: item.key })}
+                onSelect={item => dispatch({ type: 'CHANGE_TAB', payload: item?.key })}
             />
             <FloatButton
                 icon={<BgColorsOutlined style={{ color: state.theme === 'light' ? '#e9dfce' : '#1e2125' }} />}

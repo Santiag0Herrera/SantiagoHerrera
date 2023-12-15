@@ -12,7 +12,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <Space className='page'>
+    <div className='page'>
       {isMounted && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -22,7 +22,7 @@ const Experience = () => {
         >
           <h1>Experience</h1>        </motion.div>
       )}
-    </Space>
+    </div>
   )
 }
 

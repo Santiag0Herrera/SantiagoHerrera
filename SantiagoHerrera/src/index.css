@@ -99,3 +99,23 @@ main{
     width: 219px;
   }
 }
+
+.error-page{
+  height: 92vh;
+  justify-content: center;
+}
+
+a {
+  color: grey;
+  text-decoration: underline;
+}
+
+a:hover{
+  color: rgb(92, 91, 91);
+  text-decoration: underline;
+}
+
+.link-label{
+  color: grey;
+  text-decoration: none;
+}
