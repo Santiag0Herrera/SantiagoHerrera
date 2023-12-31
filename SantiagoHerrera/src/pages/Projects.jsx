@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import axios from 'axios'
 import ProjectCard from '../components/ProjectCard/ProjectCard';
+import Loader from '../components/Loader/Loader';
 
 const Projects = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -32,9 +33,11 @@ const Projects = () => {
         >
           <h1>My Projects</h1>
           <div className='projectsContainer'>
-            {!loading &&
-              projects.map((p, index) => <ProjectCard key={index} data={p} loading={loading} delay={index * 0.1}/>
-            )}
+            {!loading ?
+              projects.map((p, index) => <ProjectCard key={index} data={p} loading={loading} delay={index * 0.1}/>)
+              :
+              <Loader />
+            }
           </div>
         </motion.div>
       )}
