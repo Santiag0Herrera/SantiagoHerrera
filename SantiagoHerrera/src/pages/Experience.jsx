@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { experience } from '../data/data';
-import ExpCard from '../components/Card/card';
+import ExpCard from '../components/Card/Card';
 
 const Experience = () => {
   const [isMounted, setIsMounted] = useState(false);
