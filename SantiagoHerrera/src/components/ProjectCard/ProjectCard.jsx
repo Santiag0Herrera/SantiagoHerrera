@@ -11,6 +11,7 @@ import {
 const ProjectCard = ({ data, delay, course, project }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [isHover, setIsHover] = useState(false);
+  const [collapse, setCollapse] = useState(false);
   const { state } = useGlobalContext();
 
   const variants = {
@@ -25,7 +26,8 @@ const ProjectCard = ({ data, delay, course, project }) => {
     position: isHover && 'relative',
     bottom: isHover && '3px',
     left: isHover && '3px',
-    boxShadow: isHover && '-5px 5px 5px #474747'
+    boxShadow: isHover && '-5px 5px 5px #474747',
+    width: !collapse ? '23vw' : '100%',
   }
 
   const skillsStyle = {
@@ -62,6 +64,10 @@ const ProjectCard = ({ data, delay, course, project }) => {
       setIsMounted(false);
     }
   }, [])
+
+  useEffect(()=>{
+    window.screen.width > 1000 ? setCollapse(false) : setCollapse(true)
+}, [window.screen.width])
 
   return (
     <AnimatePresence>
