@@ -81,11 +81,11 @@ const ContactInfo = () => {
             <div style={cardContentStyle}>
               <h2>Santiago Herrera</h2>
               <ul>
-                <li><Link style={linkStyle} to={github}><GithubOutlined style={iconStyle} />{collapse ? 'GitHub' : github}</Link></li>
-                <li><Link style={linkStyle} to={linkedIn}><LinkedinFilled style={iconStyle} />{collapse ? 'LinkedIn' : linkedIn}</Link></li>
-                <li><Link style={linkStyle} to={'https://wa.me/1134088301'}><PhoneFilled style={iconStyle} />{collapse ? 'WhatsApp' : phoneNumber}</Link></li>
-                <li><Link style={linkStyle} to={`mailto:${email}`}><MailFilled style={iconStyle} />{collapse ? 'Email' : email}</Link></li>
-                <li><EnvironmentFilled style={iconStyle} />{location}</li>
+                <li><Link style={linkStyle} to={github} target="_blank" ><GithubOutlined style={iconStyle} />{collapse ? 'GitHub' : github}</Link></li>
+                <li><Link style={linkStyle} to={linkedIn} target="_blank"><LinkedinFilled style={iconStyle} />{collapse ? 'LinkedIn' : linkedIn}</Link></li>
+                <li><Link style={linkStyle} to={'https://wa.me/1134088301'} target="_blank"><PhoneFilled style={iconStyle} />{collapse ? 'WhatsApp' : phoneNumber}</Link></li>
+                <li><Link style={linkStyle} to={`mailto:${email}`} target="_blank"><MailFilled style={iconStyle} />{collapse ? 'Email' : email}</Link></li>
+                <li><EnvironmentFilled style={iconStyle} target="_blank"/>{location}</li>
               </ul>
             </div>
           </Card>
