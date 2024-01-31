@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { experience } from '../data/data';
 import ExpCard from '../components/Card/Card';
+import { Space } from 'antd';
 
 const Experience = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -16,7 +17,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <div className='page'>
+    <Space className='page'>
       {isMounted && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -31,7 +32,7 @@ const Experience = () => {
           })} 
         </motion.div>
       )}
-    </div>
+    </Space>
   )
 }
 
