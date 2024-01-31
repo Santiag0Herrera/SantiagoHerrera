@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
-import axios from 'axios'
+import { projects } from '../data/data';
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 import Loader from '../components/Loader/Loader';
 
 const Projects = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     setIsMounted(true);
-    axios.get("https://api.vercel.com/v9/projects", { 'headers': { 'Authorization': 'Bearer ' + "y3qDRotGBmFzos0MqjXfCevS" } })
-      .then(res => {
-        setLoading(false);
-        setProjects(res?.data?.projects)
-      })
+      
     return () => {
       setIsMounted(false);
     }
@@ -33,11 +27,7 @@ const Projects = () => {
         >
           <h1>My Projects</h1>
           <div className='projectsContainer'>
-            {!loading ?
-              projects.map((p, index) => <ProjectCard key={index} data={p} loading={loading} delay={index * 0.1}/>)
-              :
-              <Loader />
-            }
+              {projects.map((p, index) => <ProjectCard key={index} data={p} delay={index * 0.1} project={true}/>)}
           </div>
         </motion.div>
       )}
