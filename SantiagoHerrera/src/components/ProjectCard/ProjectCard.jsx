@@ -74,7 +74,6 @@ const ProjectCard = ({ data, delay, course, project }) => {
             <Avatar src={`data:image/png;base64,${data?.img}`} alt={data?.title} shape='square' className='card-img' style={{ width: '100%' }} />
             <div className='cardContent'>
               <h4>{data?.title?.toUpperCase()} <span style={{color: 'grey', fontSize: '0.60rem'}}> - {data?.type}</span></h4>
-              {data?.latestDeployments && <span className='link-label'>Visit App: <Link to={`https://${data?.url}`}>{data?.latestDeployments[0]?.alias[0]}</Link></span>}
               {course && (
                 <>
                   <p><span style={{ textDecoration: 'underline' }}>At</span>: {data?.institution}</p>
@@ -84,8 +83,8 @@ const ProjectCard = ({ data, delay, course, project }) => {
               )}
               {project && (
                 <>
-                  <Link to={data?.repo} style={{textDecoration: 'none'}}><GithubOutlined style={{fontSize: '20px', margin: '0 10px 10px 0'}}/>Repository</Link>
-                  <Link to={data?.demo} style={{textDecoration: 'none'}}><AppstoreOutlined style={{fontSize: '20px', marginRight: '10px'}}/>Demo</Link>
+                  <Link to={data?.repo} target="_blank" style={{textDecoration: 'none'}}><GithubOutlined style={{fontSize: '20px', margin: '0 10px 10px 0'}}/>Repository</Link>
+                  <Link to={data?.demo} target="_blank" style={{textDecoration: 'none'}}><AppstoreOutlined style={{fontSize: '20px', marginRight: '10px'}}/>Demo</Link>
                   <Divider dashed style={dividerStyle}>
                     Tecnologies
                   </Divider>
