@@ -10,7 +10,6 @@ import {
 
 const ProjectCard = ({ data, delay, course, project }) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [isHover, setIsHover] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const { state } = useGlobalContext();
 
@@ -23,11 +22,7 @@ const ProjectCard = ({ data, delay, course, project }) => {
     border: `3px solid ${state.theme === 'light' ? '#1e2125' : '#e9dfce'}`,
     background: state.theme === 'light' ? '#1e2125' : '#e9dfce',
     color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
-    position: isHover && 'relative',
-    bottom: isHover && '3px',
-    left: isHover && '3px',
-    boxShadow: isHover && '-5px 5px 5px #474747',
-    width: !collapse ? '23vw' : '100%',
+    border: `4px solid grey`,
   }
 
   const skillsStyle = {
@@ -41,6 +36,7 @@ const ProjectCard = ({ data, delay, course, project }) => {
     borderColor: state.theme === 'light' ? '#e9dfce' : '#1e2125',
     backgroundColor: 'transparent',
     color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
+    cursor: 'arrow'
   }
 
   const dividerStyle = { 
@@ -49,13 +45,6 @@ const ProjectCard = ({ data, delay, course, project }) => {
     fontSize: '10px', 
     fontWeight: '250' 
   }
-
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
 
   useEffect(() => {
     setIsMounted(true);
@@ -76,16 +65,15 @@ const ProjectCard = ({ data, delay, course, project }) => {
           initial="hidden"
           animate="visible"
           variants={variants}
+          style={{width: !collapse ? '30%' : '100%',}}
         >
           <Card
             style={cardStyles}
             className='card'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
           >
-            <Avatar src={state.theme === 'light' ? '/assets/coding-light.svg' : '/assets/coding-dark.svg'} shape='square' className='card-img' style={{ width: '100%' }} />
+            <Avatar src={`data:image/png;base64,${data?.img}`} alt={data?.title} shape='square' className='card-img' style={{ width: '100%' }} />
             <div className='cardContent'>
-              <h4>{data?.title?.toUpperCase()}</h4>
+              <h4>{data?.title?.toUpperCase()} <span style={{color: 'grey', fontSize: '0.60rem'}}> - {data?.type}</span></h4>
               {data?.latestDeployments && <span className='link-label'>Visit App: <Link to={`https://${data?.url}`}>{data?.latestDeployments[0]?.alias[0]}</Link></span>}
               {course && (
                 <>

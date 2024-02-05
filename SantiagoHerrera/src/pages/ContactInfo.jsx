@@ -14,17 +14,9 @@ import { Link } from 'react-router-dom';
 
 const ContactInfo = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [isHover, setIsHover] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const { linkedIn, phoneNumber, email, location, github } = contactInfoData
   const { state } = useGlobalContext();
-
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
 
   const iconStyle = {
     fontSize: '20px',
@@ -41,10 +33,6 @@ const ContactInfo = () => {
     color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
     margin: '20px',
     width: '60vw',
-    position: isHover && 'relative',
-    bottom: isHover && '3px',
-    left: isHover && '3px',
-    boxShadow: isHover && '-5px 5px 5px #474747'
   }
 
   const cardContentStyle = {
@@ -75,8 +63,6 @@ const ContactInfo = () => {
           <h1>Contact Me</h1>
           <Card
             style={cardStyles}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
           >
             <div style={cardContentStyle}>
               <h2>Santiago Herrera</h2>

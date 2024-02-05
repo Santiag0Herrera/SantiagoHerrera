@@ -18,24 +18,12 @@ const ExpCard = ({ data, loading, delay }) => {
     visible: { opacity: 1, x: 0, transition: { delay } },
   };
 
-  const [isHover, setIsHover] = useState(false);
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
-
   const cardStyles = {
     border: `4px solid grey`,
     background: state.theme === 'light' ? '#1e2125' : '#e9dfce',
     color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
     margin: '20px 0',
     maxWidth: '700px',
-    position: isHover && 'relative',
-    bottom: isHover && '3px',
-    left: isHover && '3px',
-    boxShadow: isHover && '-5px 5px 5px #474747'
   }
 
   const dividerStyle = { 
@@ -76,8 +64,6 @@ const ExpCard = ({ data, loading, delay }) => {
         >
           <Card
             style={cardStyles}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
           >
             <Skeleton loading={loading} active className='card-content'>
               <div className='cardContent'>
