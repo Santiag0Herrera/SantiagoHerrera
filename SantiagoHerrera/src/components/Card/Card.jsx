@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 
 const ExpCard = ({ data, loading, delay }) => {
-  const { position, company, employmentType, period, duration, location, skills } = data
+  const { position, company, employmentType, period, description, location, skills } = data
   const [isMounted, setIsMounted] = useState(false);
   const { state } = useGlobalContext();
   const variants = {
@@ -72,6 +72,7 @@ const ExpCard = ({ data, loading, delay }) => {
                 <p><ClockCircleFilled /> {employmentType}</p>
                 <p><CalendarFilled /> {period}</p>
                 <p><EnvironmentFilled /> {location}</p>
+                <p>"{description}"</p>
               </div>
               <Divider dashed style={dividerStyle}>
                 Tecnologies

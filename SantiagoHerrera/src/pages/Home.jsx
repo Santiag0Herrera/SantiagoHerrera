@@ -9,7 +9,7 @@ import ProjectCard from '../components/ProjectCard/ProjectCard';
 
 const Home = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const { name, title, technologies, education, courses } = personalInfo;
+  const { name, title, technologies, education, courses, description } = personalInfo;
   const { state } = useGlobalContext();
 
   const dividerStyle = {
@@ -40,10 +40,7 @@ const Home = () => {
           <section>
             <h2>About Me</h2>
             <Divider dashed style={dividerStyle} />
-            <p>I am an optimistic and joyful individual striving for <b>continuous growth</b> and development in both my professional and educational pursuits, as well as in my personal interests. My philosophy is to <b>"embrace mistakes as opportunities"</b> for learning and growth, rather than fearing them. In my free time, I enjoy spending time with friends and family, and I have a <b>passion for technology.</b></p>
-            <p>Currently, I work at Red Link S.A as a <b>Frontend React Developer</b>, actively contributing to the development of applications for both internal and external clients. As a team, we adhere to high standards in cybersecurity and quality, ensuring the delivery of secure and top-notch <b>software solutions.</b></p>
-            <p>I received my high school diploma and Bachelor's Degree in Business Management and Administration from Colegio San Gabriel de la Dolorosa, where I also obtained an <b>advanced level of English (First Certificate Expert).</b></p>
-            <p>Currently pursuing a <b>Computer Engineergin Degree</b>. In addition, I have basic accounting knowledge, <b>strong teamwork skills</b>, proficiency in audiovisual programs and experience as a <b>UX & UI Designer.</b></p>
+            <p style={{ fontSize: '20px'}}>{description}</p>
           </section>
           <section>
             <h2>Technologies</h2>

@@ -23,6 +23,7 @@ const ProjectCard = ({ data, delay, course, project }) => {
     background: state.theme === 'light' ? '#1e2125' : '#e9dfce',
     color: state.theme === 'light' ? '#e9dfce' : '#1e2125',
     border: `4px solid grey`,
+    height: '500px'
   }
 
   const skillsStyle = {
@@ -65,13 +66,13 @@ const ProjectCard = ({ data, delay, course, project }) => {
           initial="hidden"
           animate="visible"
           variants={variants}
-          style={{width: !collapse ? '30%' : '100%',}}
+          style={{width: !collapse ? '30%' : '100%', Height: '500px'}}
         >
           <Card
             style={cardStyles}
             className='card'
           >
-            <Avatar src={`data:image/png;base64,${data?.img}`} alt={data?.title} shape='square' className='card-img' style={{ width: '100%' }} />
+            <Avatar src={`data:image/png;base64,${data?.img}`} alt={data?.title} shape='square' className='card-img' style={{ width: '100%', height: '250px' }} />
             <div className='cardContent'>
               <h4>{data?.title?.toUpperCase()} <span style={{color: 'grey', fontSize: '0.60rem'}}> - {data?.type}</span></h4>
               {course && (

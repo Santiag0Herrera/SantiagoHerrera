@@ -23,7 +23,7 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ ease: 'easeInOut' }}
-          style={{width: '100%'}}
+          style={{width: '100%', height: '100%'}}
         >
           <h1>My Projects</h1>
           <div className='projectsContainer'>
